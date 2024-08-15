@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Secure.Messenger.WpfHost", "Secure.Messenger.WpfHost\Secure.Messenger.WpfHost.csproj", "{3427C45F-48F8-4F20-B1F4-5E673C91B992}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Secure.Messenger.Shared", "Secure.Messenger.Shared\Secure.Messenger.Shared.csproj", "{47D971F4-FD72-4C79-9C9B-2C0E7DA857F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Secure.Messenger.Server", "Secure.Messenger.Server\Secure.Messenger.Server.csproj", "{71637A43-E686-4274-8B25-57CC7E6CDC6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3427C45F-48F8-4F20-B1F4-5E673C91B992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3427C45F-48F8-4F20-B1F4-5E673C91B992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3427C45F-48F8-4F20-B1F4-5E673C91B992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3427C45F-48F8-4F20-B1F4-5E673C91B992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47D971F4-FD72-4C79-9C9B-2C0E7DA857F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47D971F4-FD72-4C79-9C9B-2C0E7DA857F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47D971F4-FD72-4C79-9C9B-2C0E7DA857F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47D971F4-FD72-4C79-9C9B-2C0E7DA857F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71637A43-E686-4274-8B25-57CC7E6CDC6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71637A43-E686-4274-8B25-57CC7E6CDC6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71637A43-E686-4274-8B25-57CC7E6CDC6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71637A43-E686-4274-8B25-57CC7E6CDC6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

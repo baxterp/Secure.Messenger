@@ -1,0 +1,78 @@
+﻿<Window x:Class="Secure.Messenger.WpfHost.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Secure.Messenger.WpfHost"        
+        Title="Secure Messenger Demo" Height="730" Width="705" 
+        ResizeMode="NoResize" Icon="Images/lock.ico">
+    <Window.DataContext>
+        <local:MainViewModel />
+    </Window.DataContext>
+    <Window.Background>
+        <ImageBrush ImageSource="Images/Background2.jpg" />
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="1" Grid.Column="1" FontWeight="Bold" Content="IP Address of Target"/>
+
+        <TextBox Grid.Column="1" Grid.Row="2" Width="150" FontWeight="Medium" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top"
+                 Text="{Binding RemoteIPAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button  Grid.Row="2" Grid.Column="1" FontWeight="Bold" HorizontalAlignment="Right" Width="160" Margin="0,0,20,0" Content="Connect To Target Server"
+                 Height="25" VerticalAlignment="Top" Command="{Binding ConnectToServer}" />
+
+        <Label Grid.Column="1" Grid.Row="3" Content="Messages Received" FontWeight="Bold" VerticalAlignment="Bottom" />
+        <ListBox Grid.Column="1" Grid.Row="4" ItemsSource="{Binding ReceivedMessages, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Label Grid.Column="1" Grid.Row="5" Content="Messages Sent" FontWeight="Bold" VerticalAlignment="Bottom" />
+        <ListBox Grid.Column="1" Grid.Row="6" ItemsSource="{Binding SentMessages, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Label Grid.Row="7" Grid.Column="1" FontWeight="Bold" Content="Message to Send" VerticalAlignment="Bottom"/>
+        <TextBox Grid.Row="8" Grid.Column="1" Width="350" HorizontalAlignment="Left" 
+                Text="{Binding SendMessage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <Button Grid.Row="8" Grid.Column="1" Width="100" HorizontalAlignment="Right" Content="Send Message" 
+                Margin="0,0,210,0" Command="{Binding SendData}"/>
+
+        <Label Grid.Column="1" Grid.Row="10" Content="Status Messages" FontWeight="Bold" VerticalAlignment="Bottom" />
+        <ListBox Grid.Column="1" Grid.Row="11" ItemsSource="{Binding StatusMessages, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+        <Rectangle Grid.Column="0" Grid.Row="3" Grid.RowSpan="7" Grid.ColumnSpan="3"
+                   Visibility="{Binding NotConnectedVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=Visible}">
+            <Rectangle.Fill>
+                <VisualBrush>
+                    <VisualBrush.Visual>
+                        <StackPanel>
+                            <StackPanel.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" Opacity="0.75">
+                                    <GradientStop Color="LightGray" Offset="0.0" />
+                                    <GradientStop Color="Gray" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </StackPanel.Background>
+                            <TextBlock FontSize="25"/>
+                            <TextBlock FontSize="25"/>
+                            <TextBlock FontSize="25" FontWeight="Medium" FontFamily="Verdana"  Foreground="DarkBlue" Text="   Not Connected   "/>
+                            <TextBlock FontSize="25"/>
+                            <TextBlock FontSize="25"/>
+                        </StackPanel>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+    </Grid>
+</Window>
